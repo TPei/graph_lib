@@ -1,5 +1,5 @@
-require './lib/vertex.rb'
 require 'json'
+require 'vertex'
 
 class Graph
   def initialize
