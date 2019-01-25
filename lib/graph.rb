@@ -38,6 +38,11 @@ class Graph
     parents
   end
 
+  def get_vertex(name)
+    names = @vertices.map(&:name)
+    @vertices[names.index(name)]
+  end
+
   def self.from_hash(hash)
     g = Graph.new
     hash['vertices'].each do |vertex|

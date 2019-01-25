@@ -12,6 +12,21 @@ RSpec.describe Graph do
     end
   end
 
+  describe '#get_vertex' do
+    it 'returns the vertex by that name' do
+      @graph.add_vertex('a')
+      @graph.add_vertex('b')
+      @graph.add_vertex('c')
+      @graph.add_edge('a', 'b')
+      @graph.add_edge('b', 'c')
+
+      b = @graph.get_vertex('b')
+      expect(b.name).to eq 'b'
+      expect(b.parents.first).to eq 'a'
+      expect(b.children.first).to eq 'c'
+    end
+  end
+
   describe '#add_edge' do
     it 'creates a new edge between two existing vertices' do
       a = @graph.add_vertex('a')
